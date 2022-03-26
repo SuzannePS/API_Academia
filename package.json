@@ -1,0 +1,19 @@
+{
+  "name": "api_-academia",
+  "version": "1.0.0",
+  "description": "\"Projeto API MOD 4 - Academia\"",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {"dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"SuzannePS\"",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "express": "^4.17.3",
+    "fetch": "^1.1.0",
+    "sqlite3": "^5.0.2"
+  }
+}
