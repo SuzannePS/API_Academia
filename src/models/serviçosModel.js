@@ -1,4 +1,4 @@
-import ServiçosDAO from "../DAO/serviçosDAO.js";
+import ServiçosDAO from "../DAO/ServiçosDAO.js";
 import ServiçosSchema from "./schema/ServiçosSchema.js";
 
 class Serviços {
@@ -16,16 +16,15 @@ class Serviços {
         }
     }
 
-
-insereAluno = async (serviço) => {
+insereAluno = async (servico) => {
     try {
-        const novoAluno = new ServiçosSchema(serviço.aula, serviço.profissional, serviço.treino, serviço.período, serviço.diaSemana, serviço.aluno)
+        const novoAluno = new ServiçosSchema(servico.aula, servico.profissional, servico.treino, servico.periodo, servico.diaSemana, servico.aluno)
+        
         return await this.dao.insereAluno(novoAluno)
     } catch (error) {
         throw new Error (error.mensagem)
     }
 }
-
 
 deletaAluno = async (ID) => {
     try {
@@ -38,9 +37,9 @@ deletaAluno = async (ID) => {
     }
 }
 
-atualizaServiços = async (aluno, serviço) => {
+atualizaServiços = async (aluno, servico) => {
     try {
-        const serviçoAtualizado = new ServiçosSchema(serviço.aula, serviço.profissonal, serviço.treino, serviço.período, serviço.diaSemana, serviço.aluno)
+        const serviçoAtualizado = new ServiçosSchema(servico.aula, servico.profissional, servico.treino, servico.período, servico.diaSemana, servico.aluno)
         return await this.dao.atualizaServiços(aluno, serviçoAtualizado)
     } catch (error) {
         return ({

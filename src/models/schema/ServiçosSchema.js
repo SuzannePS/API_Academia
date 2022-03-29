@@ -1,9 +1,9 @@
 class ServiçosSchema {
-    constructor(aula, profissional, treino, período, diaSemana, aluno){
+    constructor(aula, profissional, treino, periodo, diaSemana, aluno){
         this.aula = aula
         this.profissional = profissional
         this.treino = treino
-        this.período = período
+        this.periodo = periodo
         this.diaSemana = diaSemana
         this.aluno = aluno
         
