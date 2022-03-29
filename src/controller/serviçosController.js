@@ -19,33 +19,18 @@ const serviçosController = (app, bancoDeDados) => {
         }    
     })
 
-    app.get('/serviço/aluno/:aluno', async (req, res) => {
-            const aluno = req.params.aluno;
-            res.json(await serviçosModel.insereAluno(aluno))
-    })
-
-    app.post('/serviços', async (req, res) => {
+    app.post('/servicos', async (req, res) => {
         const body = req.body
-        try {
-            const resposta = await serviçosModel.insereAluno(body)
-            res.status(201).json({
-                "mensagem" : resposta,
-                "erro" : false
-            })
-        } catch (error) {
-            res.status(400).json({
-                "mensagem": error.message,
-                "erro": true
-            })
-        }   
-    })
+        
+        res.json (await serviçosModel.insereAluno(body))
+     })
 
-    app.delete('/serviços/ID/:ID', async (req, res) => {
+    app.delete('/servicos/ID/:ID', async (req, res) => {
         const id = req.params.ID
-        res.json(await serviçosModel.deletaServiços(id))
+        res.json(await serviçosModel.deletaAluno(id))
     })
 
-    app.put('/serviços/ID/:ID', async (req, res) => {
+    app.put('/servicos/ID/:ID', async (req, res) => {
         const id = req.params.ID
         const body = req.body
         res.json(await serviçosModel.atualizaServiços(id, body))
