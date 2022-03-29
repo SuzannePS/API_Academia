@@ -1,76 +1,77 @@
-class serviçosDAO{
-    constructor(db){
+class serviçosDAO {
+    constructor(db) {
         this.db = db
-}
+    }
 
-todosServiços = ()=>{
+    todosServiços = () => {
 
-    return new Promise((resolve, reject)=>{
-        this.db.all('SELECT * FROM SERVIÇOS', (error, rows)=>{
-            if(error){
-                reject(error)
-            }else{
-                resolve(rows)
-            }
+        return new Promise((resolve, reject) => {
+            this.db.all('SELECT * FROM SERVIÇOS', (error, rows) => {
+                if (error) {
+                    reject(error)
+                } else {
+                    resolve(rows)
+                }
+            })
         })
-    })
-}
+    }
 
-insereAluno = (aluno)=>{
-     
-    return new Promise((resolve, reject)=>{
-        this.db.run('INSERT INTO (SERVIÇOS AULA, PROFISSIONAL, TREINO, PERÍODO, DIASEMANA, ALUNO) VALUES(?,?,?,?,?,?)'), 
-        aluno.aula, aluno.profissional, aluno.treino, aluno.período, aluno.diaSemana, aluno.aluno, (erro)=>{
-            if(erro){
-                reject (erro)
-            } else {
-                resolve (erro)
-            }
-        }
-    })
-}
-           
-     
-        
+    insereAluno = (novoAluno) => {
 
-
-
-        
-deletaAluno = (ID)=>{
-    return new Promise((resolve, reject)=>{
-        this.db.run('DELETE FROM SERVIÇOS WHERE ID = ?',
-        ID,
-        (error)=>{
-            if(error){
+        return new Promise((resolve, reject) => {
+            console.log(novoAluno)
+            this.db.run('INSERT INTO SERVIÇOS (AULA, PROFISSIONAL, TREINO, PERIODO, DIASEMANA, ALUNO) VALUES(?,?,?,?,?,?)', novoAluno.aula, novoAluno.profissional, novoAluno.treino, novoAluno.periodo, novoAluno.diaSemana, novoAluno.aluno,
+            ),
+                
+                resolve(`O aluno ${novoAluno.aluno} foi adicionado com sucesso`)
+            try {
+                if (!error) {
+                    resolve(`O aluno ${novoAluno.aluno} foi adicionado com sucesso`)
+                } else {
+                    throw new Error
+                }
+            } catch (error) {
                 reject(error)
-            }else{
-                resolve({
-                    "serviço": ` Cadastro aluno ${ID} deletado com sucesso`,
-                    "erro": false
+            }
+
+        })
+    }
+
+
+    deletaAluno = (ID) => {
+        return new Promise((resolve, reject) => {
+            this.db.run('DELETE FROM SERVIÇOS WHERE ID = ?',
+                ID,
+                (error) => {
+                    if (error) {
+                        reject(error)
+                    } else {
+                        resolve({
+                            "serviço": ` Cadastro aluno ${ID} deletado com sucesso`,
+                            "erro": false
+                        })
+                    }
                 })
-            }
         })
-    })
-}
+    }
 
-atualizaServiços = (ID, serviço)=>{
-    return new Promise((resolve, reject)=>{
-        this.db.run('UPDATE SERVIÇOS SET AULA = ?, PROFISSIONAL = ?, TREINO = ?, PERÍODO = ?, DIASEMANA = ?, ALUNO = ?, = ? WHERE ID = ?',
-        serviço.aula, serviço.profissional, serviço.treino, serviço.período, serviço.diaSemana, serviço.aluno,
-        ID,
-        (error)=>{
-            if(error){
-                reject(error)
-            }else{
-                resolve({
-                    "mensagem": `Olá ${ID}, seu agendamento de ${serviço} foi atualizado com sucesso`,
-                    "serviço": serviço,
-                    "erro": false
+    atualizaServiços = (ID, serviço) => {
+        return new Promise((resolve, reject) => {
+            this.db.run('UPDATE SERVIÇOS SET AULA = ?, PROFISSIONAL = ?, TREINO = ?, PERIODO = ?, DIASEMANA = ?, ALUNO = ? WHERE ID = ?',
+                serviço.aula, serviço.profissional, serviço.treino, serviço.periodo, serviço.diaSemana, serviço.aluno,
+                ID,
+                (error) => {
+                    if (error) {
+                        reject(error)
+                    } else {
+                        resolve({
+                            "serviço": serviço,
+                            "erro": false
+                        })
+                    }
                 })
-            }
         })
-    })
-}
+    }
 
 }
 
