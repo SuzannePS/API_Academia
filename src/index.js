@@ -1,10 +1,10 @@
 import express from "express";
 import serviçosController from "./controller/serviçosController.js";
-import database from "./database/sqlite-db.js";
+import database from "./database/sqlite-db.js"
 
 
 const app = express()
-const porta = 3010
+const porta = 3005
 
 app.use(express.json())
 
