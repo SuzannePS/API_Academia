@@ -37,55 +37,52 @@ npm run dev
 
 Schema da resposta. 
 {
-	"serviço": [
-		{
-			"ID"
-			"AULA": 
-			"PROFISSIONAL"
-			"TREINO"
-			"PERIODO"
-			"DIASEMANA"
-			"ALUNO"
+"serviço": [
+ {
+   "ID"
+   "AULA": 
+   "PROFISSIONAL"
+   "TREINO"
+   "PERIODO"
+   "DIASEMANA"
+   "ALUNO"
   ]
   
   * Método POST para adicionar um novo aluno ( /servicos)
 
 Para adicionar, segue o esquema:
   {
- "aula": 
- "profissional" : 
- "treino" : 
- "periodo" : 
- "diaSemana" : 
- "aluno :
+    "aula": 
+    "profissional" : 
+    "treino" : 
+    "periodo" : 
+    "diaSemana" : 
+    "aluno :
 }
 
-Schema da resposta. 
-{
-  "Mensagem": "O aluno teste foi adicionado com sucesso",
- }
+Schema da resposta:
 
+  "Mensagem": "O aluno teste foi adicionado com sucesso",
+ 
   * Método DELETE para apagar por ID ( /servicos/ID/{o número de id})
 
-Schema da resposta. 
-{
-  "Mensagem": {
+Schema da resposta:
+
+  "Mensagem": 
 	"serviço": " Cadastro aluno 7 deletado com sucesso",
 	"erro": false
-}
-  }
   
-  * Método PUT para atualizar Serviços por ID ( /servico/ID/{o número de id})
+  * Método PUT para atualizar serviços por ID ( /servico/ID/{o número de id})
 
-Schema da resposta. 
-{
-	"serviço": {
-		"aula": 
-		"profissional": 
-		"treino": 
-		"diaSemana": 
-		"aluno": 
-	},
+Schema da resposta:
+
+"serviço": {
+	     "aula": 
+	     "profissional": 
+	     "treino": 
+	     "diaSemana": 
+	     "aluno": 
+	   },
 	"erro": false
-}
+     }
   
