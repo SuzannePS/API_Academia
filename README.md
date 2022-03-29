@@ -1,4 +1,7 @@
-# API_Academia
+<h1>Academia</h1>
+
+
+ # API_Academia
 
 Projeto para fins didáticos Resilia Educação - Projeto Final Módulo 4
 * Tem como objetivo criar uma API RESTful de uma academia, onde será possível aplicar as operações CRUD na entidade "Serviços", utilizando o Node.js com framework Express.
