@@ -12,13 +12,13 @@ CREATE TABLE IF NOT EXISTS "SERVIÇOS" (
     "AULA" VARCHAR(100),
     "PROFISSIONAL" VARCHAR(100),
     "TREINO" VARCHAR(100),
-    "PERÍODO" VARCHAR(100),
+    "PERIODO" VARCHAR(100),
     "DIASEMANA" VARCHAR(100),
     "ALUNO" VARCHAR(100)
   );`;
 
 const ADD_SERVIÇOS_DATA = `
-INSERT INTO SERVIÇOS (ID, AULA, PROFISSIONAL, TREINO, PERÍODO, DIASEMANA, ALUNO)
+INSERT INTO SERVIÇOS (ID, AULA, PROFISSIONAL, TREINO, PERIODO, DIASEMANA, ALUNO)
 VALUES 
     (1, 'Musculação', 'Karina', 'A - Iniciante', 'Manhã', 'Segunda-Feira', 'Cinthia'),
     (2, 'Natação', 'Inara', 'B - Intermediário', 'Noite', 'Terça-Feira', 'Felipe'),
